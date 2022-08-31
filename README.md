@@ -1,2 +1,2 @@
 # PemrogramanJaringanKomputer
-only for cool yeahh 
+ilysm #mwah
