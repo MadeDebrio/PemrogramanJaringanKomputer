@@ -1,11 +1,14 @@
 <?php
     include('koneksi.php');
     if (isset($_POST['login'])) {//login
-        $email = $_POST['email'];// ngambil dari database
+        $email = $_POST['email'];//define the email variable
         $password = $_POST['password'];
+
+        //checking username
         $sql = mysqli_query($con,"SELECT * FROM user where email = '$email'");
         if ($sql) {
             $result = mysqli_fetch_array($sql);
+            //checking pass
             if ($password == $result['password']) {
                 $_SESSION['id_user'] = $result['id_user'];
                 header("Location: index.php ");
