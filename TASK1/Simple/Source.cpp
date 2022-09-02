@@ -1,3 +1,4 @@
+#pragma warning( disable : 4507 34; once : 4385; error : 164 )
 #include <iostream>
 #include <string>
 using namespace std;
@@ -22,13 +23,13 @@ int main() {
 	cout << "Password = " << password << endl;
 	cout << "Package  = " << package << endl;
 
-	package = output(isSingleDigitUSER, isSingleDigitPASS,package);
+	package = output(isSingleDigitUSER, isSingleDigitPASS, package);
 
 	cout << "***********************Checking Data *****************************\n\n";
 	cout << "Username = " << username << endl;
 	cout << "Password = " << password << endl;
 	cout << "Package  = " << package << endl;
-	
+
 
 	cout << endl;
 	system("PAUSE");
@@ -50,9 +51,9 @@ string process(string a, string b, string c) {
 	c += to_string(temp) + a;
 	temp = b.size();
 	c += to_string(temp) + b;
-	
+
 	//Check the number of Username n password
-	if (a.size()>9)
+	if (a.size() > 9)
 	{
 		isSingleDigitUSER = false;
 	}
@@ -78,8 +79,8 @@ string output(bool checkUSER, bool checkPASS, string Data) {
 			username += Data[i];
 		}
 		Data = Data.erase(0, stoi(temp));
-		
-		if (checkPASS==true)//password single digit
+
+		if (checkPASS == true)//password single digit
 		{
 			temp = Data[0];//Take the first string 
 			Data = Data.erase(0, 1);
@@ -87,14 +88,14 @@ string output(bool checkUSER, bool checkPASS, string Data) {
 				password += Data[i];
 			}
 		}
-		else {
+		else if (checkPASS == false) {
 			temp = Data[0] + Data[1];//Take the first string 
 			Data = Data.erase(0, 2);
 			for (int i = 0; i < stoi(temp); i++) {
 				password += Data[i];
 			}
 		}
-		
+
 	}
 	else {
 		temp = Data[0] + Data[1];//Take the first string 
@@ -112,13 +113,13 @@ string output(bool checkUSER, bool checkPASS, string Data) {
 				password += Data[i];
 			}
 		}
-		else {
+		else if (checkPASS == false) {
 			temp = Data[0] + Data[1];//Take the first string 
 			Data = Data.erase(0, 2);
 			for (int i = 0; i < stoi(temp); i++) {
 				password += Data[i];
 			}
-		}		
+		}
 	}
 	Data.erase();
 	return Data;
