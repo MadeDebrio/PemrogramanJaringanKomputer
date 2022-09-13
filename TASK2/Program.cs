@@ -30,13 +30,19 @@ namespace LoginClient
 
             //creating file
             string fileName = "UserData.json";
-            //converts the text format into json string
+            //converts the text format into json string (Marshall)
             string jsonString = JsonSerializer.Serialize(user);
-
             File.WriteAllText(fileName, jsonString);
             Console.WriteLine(File.ReadAllText(fileName));
+
+            //converts the json string into text format (Unmarshall)
+            USER player1 = JsonSerializer.Deserialize<USER>(jsonString)!;
+
+            Console.WriteLine($"Username: {player1.username}");
+            Console.WriteLine($"Password: {player1.password}");
+
         }
     }
 
-    
+
 }
