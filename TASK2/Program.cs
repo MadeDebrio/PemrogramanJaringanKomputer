@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Text.Json;
-using System.IO;
+using System.Text.Json;//includes serializing objects to JSON text and deserializing JSON text to objects
+using System.IO;// Contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
 
 namespace LoginClient
 {
