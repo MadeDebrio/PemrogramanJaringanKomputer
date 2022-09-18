@@ -1,7 +1,7 @@
 <?php
   
 // Input username
-$Username = readline('Username: ');
+$username = readline('Username: ');
 // Input password
 $password = readline('Password: ');
 
@@ -26,7 +26,7 @@ $encryption = openssl_encrypt($password, $ciphering,
         $encryption_key, $options, $encryption_iv);
   
 // Display the encrypted string
-echo "Username: " . $Username. "\n";
+echo "username: " . $username. "\n";
 echo "Encrypted String: " . $encryption . "\n";
   
 
@@ -41,7 +41,7 @@ $decryption = openssl_decrypt ($encryption, $ciphering,
             $decryption_key, $options, $encryption_iv);
   
 // Display the decrypted string
-echo "Username: " . $Username. "\n";
+echo "username: " . $username. "\n";
 echo "Decrypted String: " . $decryption;
   
 ?>
