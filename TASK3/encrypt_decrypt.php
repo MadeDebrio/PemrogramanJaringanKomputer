@@ -40,7 +40,7 @@ $decryption_key = openssl_digest(php_uname(), 'MD5', TRUE);
 $decryption = openssl_decrypt ($encryption, $ciphering,
             $decryption_key, $options, $encryption_iv);
   
-// Display the decrypted string
+// Display the decrypted password
 echo "username: " . $username. "\n";
 echo "Decrypted String: " . $decryption;
   
